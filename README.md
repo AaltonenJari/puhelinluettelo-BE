@@ -1,2 +1,2 @@
 Linkki Internetissä olevaan sovellukseen:
-http://localhost:3001/api/persons/
+https://puhelinluettelo-be-btg1.onrender.com/api/persons
