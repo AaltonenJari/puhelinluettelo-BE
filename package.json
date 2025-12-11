@@ -13,11 +13,17 @@
   "scripts": {
     "start": "node index.js",
     "dev": "node --watch index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:ui": "rimraf build && npm --prefix ../puhelinluettelo install && npm --prefix ../puhelinluettelo run build && npx cpy \"../puhelinluettelo/build/**\" \"build\" --parents",
+    "deploy:full": "npm run build:ui && git add build -f && git commit -m \"Update UI build\" && git push"
   },
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^5.2.1",
     "morgan": "^1.10.1"
+  },
+  "devDependencies": {
+    "cpy-cli": "^6.0.0",
+    "rimraf": "^6.1.2"
   }
 }
